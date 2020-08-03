@@ -39,10 +39,12 @@ JINJA2MODERN_ENGINES = {
 
 You always can overide basic templates by placing it in tags subdirectory in your jinja2 environment template directory
 
-####js.html:
+#### js.html:
+    
     <script src="{{ file_link }}"></script>
 
-####css.html:
+#### css.html:
+    
     <link rel="stylesheet" type="text/css" href="{{ file_link }}" />
 
 ## Tags
