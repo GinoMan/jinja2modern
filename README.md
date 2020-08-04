@@ -5,7 +5,9 @@ Preprocessors not running if source files not changed.
 
 ## Instalation
 
-    pip install jinja2modern
+```shell
+pip install jinja2modern
+```
 
 ## Usage
 
@@ -40,25 +42,30 @@ JINJA2MODERN_ENGINES = {
 You always can overide basic templates by placing it in tags subdirectory in your jinja2 environment template directory
 
 #### js.html:
-    
-    <script src="{{ file_link }}"></script>
+
+```jinja
+<script src="{{ file_link }}"></script>
+```
 
 #### css.html:
-    
-    <link rel="stylesheet" type="text/css" href="{{ file_link }}" />
+
+```jinja
+<link rel="stylesheet" type="text/css" href="{{ file_link }}" />
+```
 
 ## Tags
 
 ### Less, Sass, Scss
 
 All of this template code:
-```
+
+```jinja
 {% less "style.css" %}
     less/style.less
 {% endless %}
 ```
 
-```
+```jinja
 {% less "less/style.less" %}
 ```
 
@@ -66,11 +73,13 @@ will render tags/css.html, for default template:
 `<link rel="stylesheet" type="text/css" href="/media_url/css/style.css" />`
 
 Of course you can specify out path and file name
-```
+
+```jinja
 {% less "path/to/style.css" %}
     less/style.less
 {% endless %}
 ```
+
 this will render tags/css.html, for default template:
 `<link rel="stylesheet" type="text/css" href="/media_url/path/to/style.css" />`
 
@@ -78,7 +87,8 @@ this will render tags/css.html, for default template:
 ### Javascript
 
 Js tag just copy files to media path
-```
+
+```jinja
 {% js "js/main/main.js" %}
 ```
 
@@ -88,6 +98,7 @@ this will render tags/js.html, for default template:
 #### Advanced js tag using:
 
 You can specify librarys for using in your templates by set this in your settings.py
+
 ```python
 JINJA2MODERN_JS_LIBS_PATH = 'js/libs'
 JINJA2MODERN_JS_LIBS = {
@@ -99,12 +110,14 @@ JINJA2MODERN_JS_LIBS = {
 ```
 
 and then just use
-```
+
+```jinja
 {% js "jquery" %}
 ```
 
 this will render template js/jquery.html
-```
+
+```jinja
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <script>window.jQuery || document.write('<script src="{{ file_link }}"><\/script>')</script>
 ```
@@ -113,17 +126,18 @@ this will render template js/jquery.html
 ### Coffee script
 
 All of this template code:
-```
+
+```jinja
 {% coffee "js/main/main.coffee" %}
 ```
 
-```
+```jinja
 {% coffee "main.js" %}
     js/main/main.coffee
 {% endcoffee %}
 ```
 
-```
+```jinja
 {% coffee "main.js" %}
     js/main/main1.coffee
     js/main/main2.coffee
@@ -139,17 +153,18 @@ and of course you can specify out path and file name like for less tag.
 ### UglifyJS
 
 All of this template code:
-```
+
+```jinja
 {% uglify "js/main/main.js" %}
 ```
 
-```
+```jinja
 {% uglify "main.js" %}
     js/main/main.js
 {% enduglify %}
 ```
 
-```
+```jinja
 {% uglify "main.js" %}
     js/main/main1.js
     js/main/main2.js
@@ -164,7 +179,7 @@ will render tags/js.html, for default template:
 
 __In this case uglify will run on every template rendering__
 
-```
+```jinja
 {% coffee "main.js" %}
     js/main/main1.coffee
     js/main/main2.coffee
