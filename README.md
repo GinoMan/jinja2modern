@@ -191,3 +191,19 @@ __In this case uglify will run on every template rendering__
 ```
 
 Coffee tag will produce `/media/url/js/main.js` and render tags/js.html template. Than uglify will compress this file and will not render any templates.
+
+## Roadmap ##
+
+- Rewrite to optionally use python packages to compile instead of executables
+- Publish to Pypi
+- Integrate with Flask instead of just Jinja2
+- Once integration is done, rename to flask_j2modern
+- Set it and forget it feature (master template command)
+
+## Credit ##
+
+>Forked from version 0.3.0 of Jinja2Modern.
+>
+>Authored by Alexey Novikov <velocityzen@gmail.com>
+>
+>https://github.com/velocityzen/jinja2modern
